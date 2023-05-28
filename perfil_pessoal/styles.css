@@ -1,0 +1,142 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --poppins: 'Poppins', sans-serif;
+  --montserrat: 'Montserrat', sans-serif;
+
+  --white: #ffffff;
+  --black: #000000;
+  --light-green: #8FE388;
+  --sunglow: #FFC857;
+  --jet: #323031;
+}
+
+body {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  background-color: var(--white);
+  padding: 0 16px;
+}
+
+header h1 {
+  text-align: center;
+  font-family: var(--poppins);
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.card {
+  align-self: center;
+  justify-self: center;
+  max-width: 50rem;
+  display: flex;
+  background-color: var(--sunglow);
+  box-shadow: .3125rem .3125rem var(--jet);
+}
+
+.card__side-left {
+  width: 300px;
+}
+
+.card__side-left img {
+  max-width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card__side-right {
+  padding: 1rem;
+}
+
+.card__tag {
+  display: inline-block;
+  background-color: var(--light-green);
+  padding: 5px 10px;
+  border-radius: 4px;
+  margin-bottom: 1.25rem;
+  box-shadow: .125rem .125rem var(--jet);
+  border: 1px solid var(--jet);
+
+  font-family: var(--poppins);
+  font-size: .75rem;
+}
+
+.card__user-name {
+  display: block;
+  font-family: var(--poppins);
+  font-size: 1.5rem;
+  line-height: 0.9;
+}
+
+.card__user-headline {
+  display: block;
+  margin-bottom: 1.25rem;
+
+  font-size: .875rem;
+  font-family: var(--montserrat);
+  font-weight: 500;
+}
+
+.card__user-description {
+  font-family: var(--montserrat);
+  line-height: 1.3;
+  margin-bottom: 1.25rem;
+}
+
+.card__user-socials {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.button {
+  border: 2px solid transparent;
+  padding: .625rem 1.25rem;
+  border-radius: 4px;
+  background-color: var(--jet);
+ 
+  font-family: var(--montserrat);
+  font-size: .75rem;
+  text-decoration: none;
+  color: var(--white);
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.button--border {
+  background-color: transparent;
+  border-color: var(--jet);
+  color: var(--jet);
+}
+
+@media screen and (max-width: 37.5rem) {
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  .card {
+    max-width: 100%;
+    flex-direction: column;
+  }
+
+  .card__side-left {
+    width: 100%;
+    height: 12.5rem;
+  }
+
+  .card__side-left img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-position: center;
+  }
+}
+
+@media (hover:hover) {
+  .button:hover {
+    box-shadow: 0 0 .5rem .125rem var(--white);
+  }
+}
