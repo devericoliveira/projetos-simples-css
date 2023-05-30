@@ -1,0 +1,142 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #FCF8FA;
+}
+
+.layout-grid {
+  display: grid;
+  grid-template-areas: "header" "main" "footer";
+}
+
+.header {
+  grid-area: header;
+  padding: 1rem;
+}
+
+.header .wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header  a {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  text-decoration: none;
+  color: #55253B;
+  font-size: 1.125rem;
+}
+
+.header nav  {
+  display: flex;
+  gap: 3.125rem;
+}
+
+.main-grid {
+  grid-area: main;
+
+  display: grid;
+  grid-template-rows: 25rem auto;
+}
+
+.banner {
+  position: relative;
+  background-image: url('./images/piramide.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.banner h1 {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: #55253B;
+  color: #F5F5F5;
+  text-align: center;
+  font-size: 3rem;
+  font-family: 'Chewy', cursive;
+}
+
+.album {
+  margin-block: 2rem;
+}
+
+.album  .wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.album header h2 {
+  margin-bottom: 2rem;
+  font-family: 'Chewy', cursive;
+  font-size: 2rem;
+}
+
+.album__lista {
+  display: grid;
+  grid-template-columns: repeat(4, 200px);
+  justify-content: space-between;
+  gap: 3rem;
+  list-style: none;
+}
+
+.album__lista img {
+  display: block;
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+footer {
+  grid-area: footer;
+  width: 100%;
+  background-color: #55253B;
+  padding: 1rem;
+}
+
+footer p {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-size: 1rem;
+  color: #FCF8FA;
+  text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  .header .wrapper, .album .wrapper {
+    width: 100%;
+    padding: 0 1rem;
+  }
+
+  .album__lista {
+    grid-template-columns: repeat(3, 200px);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .album__lista {
+    grid-template-columns: repeat(2, 43%);
+  }
+
+  .main-grid {
+    grid-template-rows: 12.5rem auto;
+  }
+
+  .banner h1 {
+    padding: .625rem;
+    font-size: 2.25rem;
+    font-family: 'Chewy', cursive;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .album__lista {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
